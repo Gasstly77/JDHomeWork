@@ -8,7 +8,7 @@ public class KByteToByte {
         System.out.print("Input number of Kbytes:");
 
         if (kBytes.hasNextInt()) {
-            int a = kBytes.nextInt();
+            long a = kBytes.nextInt();
             long numBytes = a * 1024;
             System.out.println("В " + a + " Kbs " + numBytes + " B");
 
@@ -16,7 +16,6 @@ public class KByteToByte {
         } else {
             System.out.println("Wrong Input. Restart and try again");
         }
-        ;
     }
 }
 

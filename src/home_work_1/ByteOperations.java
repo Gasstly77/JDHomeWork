@@ -21,10 +21,9 @@ public class ByteOperations {
                 System.out.println("Wrong Input. Restart and try again");
 
             }
-        } else {
+        }else{
             System.out.println("Wrong Input. Restart and try again");
         }
-
-        }
     }
+}
 
