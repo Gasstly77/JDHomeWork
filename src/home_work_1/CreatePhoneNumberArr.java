@@ -10,7 +10,7 @@ public class CreatePhoneNumberArr {
         System.out.print("Insert 10 random numbers in format 0 1 2 3 4 5 6 7 8 9: ");
         //int [] phoneNum = {1,2,3,4,5,6,7,8,9,0};
 
-        String phoneArr = inputArr.nextLine();
+        String phoneArr = inputArr.next();
 
         String [] phoneNum = phoneArr.split(" ");
 
