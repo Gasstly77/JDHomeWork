@@ -19,7 +19,7 @@ public class CreatePhoneExtra {
 
         if (String.valueOf(phone2).length() == 10 ) {
 
-            System.out.println(CreatePhoneNumber(phone2));
+            System.out.println(сreatePhoneNumber(phone2));
         }else{
             System.out.println("Wrong length, insert 10 numbers");
         }
@@ -31,7 +31,7 @@ public class CreatePhoneExtra {
      * @param phone - отформатированный набор цифр введенных пользователем
      * @return Возвращаяет строку с номер телефона в формате (XXX)XXX-XXXX
      */
-    public static String CreatePhoneNumber (long phone) {
+    public static String сreatePhoneNumber (long phone) {
 
         long firstThree = phone / 10000000;
 
