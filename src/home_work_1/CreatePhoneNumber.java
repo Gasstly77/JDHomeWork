@@ -11,7 +11,7 @@ public class CreatePhoneNumber {
 
             long phone = phoneNum.nextLong();
 
-            if (phone / 100000000 > 10 && phone / 1000000000 < 10 ) {
+            if ( String.valueOf(phone).length() == 10 ) {
 
                 long firstThree = phone / 10000000;
 
