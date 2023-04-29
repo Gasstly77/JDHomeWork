@@ -1,0 +1,193 @@
+<mxfile host="app.diagrams.net" modified="2023-04-28T20:57:16.260Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.48" etag="jNuXOpeZbvJph3HUVKNd" version="21.2.1" type="device">
+  <diagram name="Страница 1" id="agckuzptGgNDzWJZTM2m">
+    <mxGraphModel dx="2261" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="od9hriKUXcRxosaeJMS2-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-1" target="od9hriKUXcRxosaeJMS2-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-1" value="Выполнение шейкерной сортировки массива" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="319.39" y="20" width="167.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-2" target="od9hriKUXcRxosaeJMS2-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-2" value="Задать переменную max &lt;br&gt;в которой храниться &lt;br&gt;наибольшее значение&lt;br&gt;(в рамках цикла)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="305" y="130" width="195" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-89" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-3" target="od9hriKUXcRxosaeJMS2-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-3" value="Присвоить переменной max значение равное i-му элементу массива (max = array[i])" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-240" y="740" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-6" target="od9hriKUXcRxosaeJMS2-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-6" value="Задать переменную min&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;в которой храниться&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;наименьшее значение&lt;br&gt;&amp;nbsp;(в рамках цикла)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="307.5" y="230" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-43" target="od9hriKUXcRxosaeJMS2-45" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-43" value="Создать счетчик&amp;nbsp;&lt;br&gt;количества раз &lt;br&gt;которое был проверен &lt;br&gt;массив, равный 0 (i=0)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="315" y="330" width="175" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-45" target="od9hriKUXcRxosaeJMS2-47" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-49" value="нет" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="od9hriKUXcRxosaeJMS2-48" vertex="1" connectable="0">
+          <mxGeometry x="-0.1935" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-45" target="od9hriKUXcRxosaeJMS2-52" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-87" value="да" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="od9hriKUXcRxosaeJMS2-50" vertex="1" connectable="0">
+          <mxGeometry x="-0.3049" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-45" value="проверка &lt;br&gt;выполнена меньше &lt;br&gt;раз чем длинна &lt;br&gt;массива&lt;br&gt;i &amp;lt; array.length" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="315" y="430" width="176" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-47" value="Сортировка массива закончена" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="445" width="187" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-88" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-52" target="od9hriKUXcRxosaeJMS2-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-52" value="Создать счетчик&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;индексов элементов массива которые нужно проверить,&lt;br&gt;&amp;nbsp;равный i+1 (с=i+1)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="-240" y="610" width="200" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-53" target="od9hriKUXcRxosaeJMS2-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-53" target="od9hriKUXcRxosaeJMS2-67" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="915" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-53" value="Выполнена проверка &lt;br&gt;всех&amp;nbsp;элементов массива&lt;br&gt;с &amp;lt; array.length-i" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-228" y="850" width="176" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-55" target="od9hriKUXcRxosaeJMS2-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-55" target="od9hriKUXcRxosaeJMS2-62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-55" value="Сравнить значение &lt;br&gt;переменной max и значение проверяемого элемента массива&amp;nbsp;&lt;br&gt;max &amp;gt;= array[c]" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-255" y="1105" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-58" target="od9hriKUXcRxosaeJMS2-55" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-58" value="Перейти к следующему элементу массива&lt;br&gt;array[c++]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-200" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-62" target="od9hriKUXcRxosaeJMS2-64" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-62" value="Помещаем значение max на позицию перед сравниваемой &lt;br&gt;array[c-1]&lt;br&gt;Смещаем все значения влево" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-235" y="1290" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-64" target="od9hriKUXcRxosaeJMS2-53" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-320" y="1430" />
+              <mxPoint x="-320" y="915" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-64" value="Присвоить переменной max значение равное с-му элементу массива (max = array[с])" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-240" y="1400" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-67" target="od9hriKUXcRxosaeJMS2-70" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="203.89" y="1040" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="210" y="913" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-67" value="Поместить значение переменной max на последнюю проверяемую позицию&amp;nbsp;&lt;br&gt;(array[ array.length-i ]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="875" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-90" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-70" target="od9hriKUXcRxosaeJMS2-84" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-70" value="Создать счетчик&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;индексов элементов массива которые нужно проверить,&lt;br&gt;&amp;nbsp;равный length-i-1 (r=lenght-i-1)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="326.89" y="875" width="200" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-73" target="od9hriKUXcRxosaeJMS2-78" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-73" target="od9hriKUXcRxosaeJMS2-83" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-73" value="Выполнена проверка &lt;br&gt;всех&amp;nbsp;элементов массива&lt;br&gt;t &amp;gt;= i" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="338.89" y="1095" width="176" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-76" target="od9hriKUXcRxosaeJMS2-73" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="516.89" y="1160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="236.89" y="1425" />
+              <mxPoint x="236.89" y="1160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-75" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-76" target="od9hriKUXcRxosaeJMS2-80" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-76" value="Сравнить значение &lt;br&gt;переменной min и значение проверяемого элемента массива&amp;nbsp;&lt;br&gt;min &amp;lt;= array[t]" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="311.89" y="1350" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-77" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-78" target="od9hriKUXcRxosaeJMS2-76" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-78" value="Перейти к следующему элементу массива&lt;br&gt;array[t--]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="366.89" y="1255" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-80" target="od9hriKUXcRxosaeJMS2-82" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-80" value="Помещаем значение min на позицию перед сравниваемой &lt;br&gt;array[t+1]&lt;br&gt;Смещаем все значения вправо" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="331.89" y="1525" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-82" target="od9hriKUXcRxosaeJMS2-73" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="176.89" y="1675" />
+              <mxPoint x="176.89" y="1160" />
+            </Array>
+            <mxPoint x="616.89" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-82" value="Присвоить переменной min значение равное t-му элементу массива (min = array[t])" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="326.89" y="1645" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="od9hriKUXcRxosaeJMS2-83" target="od9hriKUXcRxosaeJMS2-45" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="705" y="650" />
+              <mxPoint x="403" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-83" value="Поместить значение переменной min на последнюю проверяемую позицию&amp;nbsp;&lt;br&gt;(array[t]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="620" y="1120" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="od9hriKUXcRxosaeJMS2-84" target="od9hriKUXcRxosaeJMS2-73" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="od9hriKUXcRxosaeJMS2-84" value="Присвоить переменной min значение равное предпоследнему элементу&amp;nbsp;проверяемой части массива (min = array[array.length-i-1])" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="316.89" y="995" width="220" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
