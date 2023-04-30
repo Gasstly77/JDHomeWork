@@ -17,7 +17,7 @@ public class MultiplyItSelf {
                 long a = inVal.nextLong();
 
                 long result = 1;
-                long nextVal = 1;
+                long nextVal;
 
                 for (int i = String.valueOf(a).length(); i > 0; i--) {
                     nextVal = a % 10;

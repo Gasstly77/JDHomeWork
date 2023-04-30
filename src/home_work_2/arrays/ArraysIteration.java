@@ -1,29 +1,33 @@
 package home_work_2.arrays;
 
-import java.util.Arrays;
+import home_work_2.utils.ArraysUtils;
 
 public class ArraysIteration {
 
     public static void main(String[] args) {
 
-        int[] array = {1,2,3,4,5,6};
+        int[] array = ArraysUtils.arrayFromConsole();
 
         allElem(array);
+
         System.out.println();
+        System.out.println();
+
         allSecondElem(array);
+
         System.out.println();
+        System.out.println();
+
         allReverseElem(array);
     }
 
-    private static StringBuilder allElem (int[] arr) {
-        StringBuilder arrElem = new StringBuilder();
+    private static void allElem (int[] arr) {
 
         int[] array = arr;
 
         for (int i = 0; i < array.length; i++) {
             int elem = array[i];
             System.out.print(elem + " ");
-            arrElem.insert(i, elem);
         }
 
         System.out.println();
@@ -52,13 +56,9 @@ public class ArraysIteration {
             System.out.print(secondElem + " ");
             d++;
         } while (d < array.length);
-
-        return arrElem;
     }
 
-    private static StringBuilder allSecondElem (int[] arr) {
-
-        StringBuilder arrSecondElem = new StringBuilder();
+    private static void allSecondElem (int[] arr) {
 
         int pos = 0;
 
@@ -67,7 +67,6 @@ public class ArraysIteration {
         for (int i = 0; i < array.length; i+=2) {
             int secondElem = array[i];
             System.out.print(secondElem + " ");
-            arrSecondElem.insert(pos++, secondElem);
         }
 
         System.out.println();
@@ -103,21 +102,15 @@ public class ArraysIteration {
                 s=0;
             }
         }
-
-        return arrSecondElem;
     }
 
-    private static StringBuilder allReverseElem (int[] arr) {
+    private static void allReverseElem (int[] arr) {
 
-        StringBuilder arrReverseElem = new StringBuilder();
-
-        int pos = 0;
         int[] array = arr;
 
         for (int i = array.length-1; i >= 0; i--) {
             int reverseElem = array[i];
             System.out.print(reverseElem + " ");
-            arrReverseElem.insert(pos++, reverseElem);
         }
 
         System.out.println();
@@ -152,8 +145,6 @@ public class ArraysIteration {
             int secondElem = f;
             System.out.print(secondElem + " ");
         }
-
-        return arrReverseElem;
     }
 
 }
