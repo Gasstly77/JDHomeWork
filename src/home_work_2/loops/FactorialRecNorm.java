@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class FactorialRecNorm {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Введите число выполняемых перемножений: ");
-
+        Scanner input = new Scanner(args[0]);
         long arg = input.nextLong();
 
         if (arg >= 0 && arg < 21) {

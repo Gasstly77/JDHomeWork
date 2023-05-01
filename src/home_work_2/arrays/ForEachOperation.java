@@ -1,6 +1,7 @@
 package home_work_2.arrays;
 
 public class ForEachOperation implements IArraysOperation{
+
     @Override
     public void allArray(int[] arr) {
         for (int f : arr) {

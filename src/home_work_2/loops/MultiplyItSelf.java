@@ -1,12 +1,12 @@
 package home_work_2.loops;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MultiplyItSelf {
     public static void main(String[] args) {
 
-        Scanner inVal = new Scanner(System.in);
-        System.out.print("Введите целое число для перемножения: ");
+        Scanner inVal = new Scanner(args[0]);
 
         if (!inVal.hasNextDouble()) {
             System.out.println("Введено не число");

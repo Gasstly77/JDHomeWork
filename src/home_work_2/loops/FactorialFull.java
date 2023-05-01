@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class FactorialFull {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Введите число выполняемых перемножений: ");
+        Scanner input = new Scanner(args[0]);
 
         if (input.hasNextInt()) {
             long arg = input.nextLong();

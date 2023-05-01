@@ -21,6 +21,10 @@ public class ArraysIteration {
         allReverseElem(array);
     }
 
+    /**
+     * Выводит в консоль все элементы массива
+     * @param arr массив элементы которого необходимо отобразить
+     */
     private static void allElem (int[] arr) {
 
         int[] array = arr;
@@ -58,20 +62,24 @@ public class ArraysIteration {
         } while (d < array.length);
     }
 
+    /**
+     * Выводит в консоль каждый второй элемент массива
+     * @param arr массив элементы которого необходимо отобразить
+     */
     private static void allSecondElem (int[] arr) {
 
         int pos = 0;
 
         int[] array = arr;
 
-        for (int i = 0; i < array.length; i+=2) {
+        for (int i = 1; i < array.length; i+=2) {
             int secondElem = array[i];
             System.out.print(secondElem + " ");
         }
 
         System.out.println();
 
-        int w = 0;
+        int w = 1;
 
         while (w < array.length) {
             int secondElem = array[w];
@@ -81,7 +89,7 @@ public class ArraysIteration {
 
         System.out.println();
 
-        int d = 0;
+        int d = 1;
 
         do {
             int secondElem = array[d];
@@ -91,7 +99,7 @@ public class ArraysIteration {
 
         System.out.println();
 
-        int s = 0; // если s==0, эелемент массива включается в выборку, если s==1 элемент пропускается
+        int s = 1; // если s==0, эелемент массива включается в выборку, если s==1 элемент пропускается
 
         for (int f : array) {
             int secondElem = f;
@@ -104,6 +112,10 @@ public class ArraysIteration {
         }
     }
 
+    /**
+     * Метод выводит все элементы массива в консоль в обратном порядке
+     * @param arr массив элементы которого необходимо отобразить
+     */
     private static void allReverseElem (int[] arr) {
 
         int[] array = arr;

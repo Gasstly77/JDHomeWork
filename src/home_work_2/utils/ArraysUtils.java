@@ -5,13 +5,10 @@ import java.util.Scanner;
 
 public class ArraysUtils {
 
-    public static void main(String[] args) {
-        int[] newArr1 = arrayRandom(3,20);
-        int[] newArr = arrayFromConsole();
-
-        System.out.println("{"+newArr1[0]+","+newArr1[1]+","+newArr1[2]+"}");
-        System.out.println("{"+newArr[0]+","+newArr[1]+","+newArr[2]+"}");
-    }
+    /**
+     * Метод предназначен для создания массива указанной длинны и указанным набором элементов.
+     * @return Возвращает новый массив длинна которого равна введенной пользователем. Элементы массива заполнены введенными данными.
+     */
     public static int[] arrayFromConsole() {
         Scanner arrLen = new Scanner(System.in);
         System.out.print("Введите длинну массива: ");
@@ -28,6 +25,12 @@ public class ArraysUtils {
 
     }
 
+    /**
+     * Метод предназначен для создания массива с случайным набором чисел
+     * @param size параметр в котором укащывает длинна массива
+     * @param maxValueExclusion параметр в котором указывает до какого числа генерировать рандомные числа
+     * @return Возвращает новый массив указанной длинны и заполненный случайными числами в пределеах диапазона
+     */
     public static int[] arrayRandom(int size, int maxValueExclusion) {
 
         int[] arr = new int[size];

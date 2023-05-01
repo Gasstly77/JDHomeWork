@@ -15,6 +15,11 @@ public class ArrayPTask {
         System.out.println(sumArray(arr));
     }
 
+    /**
+     * Суммирует четные положительные элементов массива
+     * @param arr массив значений которые необходимо суммировать
+     * @return Сумма четных положительных элементов массива
+     */
     public static long arraySum (long[] arr) {
 
         long summEvenElem=0;
@@ -28,6 +33,11 @@ public class ArrayPTask {
 
     }
 
+    /**
+     * Находит максимальный эелемент с четным индексом
+     * @param arr Массив в котором необходимо найи максимальное число
+     * @return Максимальный элемент массива с четным индексом
+     */
     public static long maxElem (long[] arr) {
         long maxVal = 0;
 
@@ -39,6 +49,11 @@ public class ArrayPTask {
         return maxVal;
     }
 
+    /**
+     * Формирует новый массив их элементов переданного массива, которые меньше среднего арифметического
+     * @param arr Массив в котором необходимо найти наименьшие элементы
+     * @return Новый массив из элементов меньше среднего арифметического всех элементов
+     */
     public static long[] lessElem (long[] arr) {
 
         long sumArr = 0;
@@ -60,6 +75,11 @@ public class ArrayPTask {
         return newArr;
     }
 
+    /**
+     * Формирует массив из наименьших элементов переданного массива
+     * @param arr массив в котором необходимо найти наименьшие значения
+     * @return Новый массив из двух наименьших значений
+     */
     public static long[] twoMinElem (long[] arr) {
         long min1 = 0;
         long min2 = 0;
@@ -72,6 +92,11 @@ public class ArrayPTask {
         return new long[] {min1,min2};
     }
 
+    /**
+     * Формирует новый массив, удаляя элементы, принадлежащие интервалу
+     * @param arr массив который необходимо сжать
+     * @return новый массив, кторый содержит элементы за пределеми интервала
+     */
     public static long[] cutArr (long[] arr) {
         long repPos = arr.length-1;
         long[] interval = {4,7};
@@ -86,6 +111,11 @@ public class ArrayPTask {
         return newArr;
     }
 
+    /**
+     * Возвращает исходный массив, заменив элементы принадлежащие интервалу на 0, элементы равные 0 перемещаются в конец массива
+     * @param arr массив который необходимо сжать
+     * @return исходный массив, в котором, элементы из интервала равны 0 и перемещены в конец массива
+     */
     public static long[] cutArr2 (long[] arr) {
 
         long[] interval = {4, 7};
@@ -107,6 +137,11 @@ public class ArrayPTask {
         return arr;
     }
 
+    /**
+     * Сумма цифр массива
+     * @param arr массив числа которого необходимо суммировать
+     * @return возвращает сумму цифр массива
+     */
     public static long sumArray (long[] arr) {
         long summ = 0;
 
@@ -120,8 +155,11 @@ public class ArrayPTask {
         return summ;
     }
 
-
-
+    /**
+     * Метод суммирует все цифры числа
+     * @param n число цифры которого необходимо суммировать
+     * @return возвращает сумму цифр числа
+     */
     public static long summElem (long n) {
         long result = 0;
         long nextVal;
@@ -133,8 +171,4 @@ public class ArrayPTask {
         }
         return result;
     }
-
-
-
-
 }

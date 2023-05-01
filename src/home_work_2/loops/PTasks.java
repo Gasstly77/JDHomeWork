@@ -13,7 +13,11 @@ public class PTasks {
         System.out.println("Перевернутое число - "+reverse(654321));
     }
 
-
+    /**
+     * Поиск наибольшей цифры натурального числа
+     * @param n число которое необхоимо проанализировать
+     * @return наибольшую цифру указанного числа
+     */
     private static long maxDig(long n) {
         long max = 0;
         long num;
@@ -31,6 +35,11 @@ public class PTasks {
         return max;
     }
 
+    /**
+     * Возвращается количество четных и нечетных цифр числа
+     * @param n число которое необхоимо проанализировать
+     * @return возвращает массив, в 0-ом элементу количество четных чисел, в первом элементу количество нечетных числе
+     */
     private static long[] evenOdd(long n) {
         long oddCount = 0;
         long evenCount = 0;
@@ -48,6 +57,11 @@ public class PTasks {
         return new long[]{evenCount, oddCount};
     }
 
+    /**
+     * Строит Ряд Фибоначчи
+     * @param n количество цифр ряда Фибоначчи до которого будет расчет
+     * @return возвращает строку в которой прописаны элементы ряда Фибоначчи до указанного элемнта
+     */
     private static StringBuilder feb(long n) {
         StringBuilder febNum = new StringBuilder();
         long nextNum = 0;
@@ -74,6 +88,12 @@ public class PTasks {
         return febNum;
     }
 
+    /**
+     * Формирует ряд чисел в указанной длины с  указанным шагом
+     * @param l длинна ряда числел
+     * @param s шаг с котороым будет строится ряд чисел
+     * @return Возвращает строку указанной длины с рядом чисел через указанный шаг
+     */
     private static StringBuilder stepNumber(long l, long s) {
         StringBuilder stepNum = new StringBuilder();
         long step = s;
@@ -96,6 +116,11 @@ public class PTasks {
         return stepNum;
     }
 
+    /**
+     * Выполняет переворот числа
+     * @param n число которое необходимо перевернуть
+     * @return возвращает перевернутое число
+     */
     private static long reverse(long n) {
         long num = n;
         long result = 0;
@@ -112,6 +137,10 @@ public class PTasks {
         return result;
     }
 
+    /**
+     *  Проверяет процент четных числел в 1000 генераций рандомного числа
+     * @return Возвращает процент выпадения четных чисел
+     */
     private static int randomPos () {
 
         int checkNum;
