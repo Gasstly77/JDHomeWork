@@ -5,9 +5,12 @@ import java.util.Random;
 public class PTasks {
 
     public static void main(String[] args) {
+
+        StorageEvenOdd evenOddCount = evenOdd(34658);
+
         System.out.println("Наибольшая цифра числа - "+maxDig(123));
         System.out.println("Вероятность четных чисел - "+randomPos()+"%");
-        System.out.println("Количество четных - " + evenOdd(34560)[0] + " количество нечетных - " + evenOdd(34560)[1]);
+        System.out.println("количество четных : "+evenOddCount.even+", количество нечетных : "+evenOddCount.odd);
         System.out.println("Ряд Фибоначчи, первые n элементов - "+feb(6));
         System.out.println("Числово ряд из l чисел с s шагом - "+stepNumber(10,2));
         System.out.println("Перевернутое число - "+reverse(654321));
@@ -38,9 +41,9 @@ public class PTasks {
     /**
      * Возвращается количество четных и нечетных цифр числа
      * @param n число которое необхоимо проанализировать
-     * @return возвращает массив, в 0-ом элементу количество четных чисел, в первом элементу количество нечетных числе
+     * @return класс в котором хранится количество четных и нечетных цифр переданного числа
      */
-    private static long[] evenOdd(long n) {
+    private static StorageEvenOdd evenOdd(long n) {
         long oddCount = 0;
         long evenCount = 0;
         long num;
@@ -54,7 +57,20 @@ public class PTasks {
             }
             n /= 10;
         }
-        return new long[]{evenCount, oddCount};
+        return new StorageEvenOdd(evenCount,oddCount);
+    }
+
+    /**
+     * Класс для хранения результатов вычисления метода StorageEvenOdd, принимает и хранит количесто чяетных и нечетных цифр переданного числа
+     */
+    public static class StorageEvenOdd {
+        private long odd;
+        private long even;
+
+        StorageEvenOdd (long evenCount, long oddCount) {
+            this.even = evenCount;
+            this.odd = oddCount;
+        }
     }
 
     /**
