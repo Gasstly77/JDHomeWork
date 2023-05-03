@@ -5,20 +5,25 @@ import java.util.Scanner;
 public class FactorialRec {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(args[0]);
+        if (args.length != 0) {
 
-        if (input.hasNextInt()) {
+            Scanner input = new Scanner(args[0]);
 
-            long arg = input.nextLong();
+            if (input.hasNextInt()) {
 
-            if (arg >= 0 && arg < 21) {
+                long arg = input.nextLong();
 
-                System.out.println(fuctorial(arg, arg));
+                if (arg >= 0 && arg < 21) {
+
+                    System.out.println(fuctorial(arg, arg));
+                } else {
+                    System.out.println("Неверный ввод, укажите положительное число не больше 20");
+                }
             } else {
                 System.out.println("Неверный ввод, укажите положительное число не больше 20");
             }
         } else {
-            System.out.println("Неверный ввод, укажите положительное число не больше 20");
+            System.out.println("Пустой аргумент! Введите значение от 0 до 20");
         }
     }
 
@@ -29,7 +34,7 @@ public class FactorialRec {
      * @return выводит в консль все шаги выполнения умножения и возвращает факториал переданной переменной
      */
     public static long fuctorial (long arg, long def) {
-        long result = 1;
+        long result;
         String multiply = arg + " * ";
         String equally = arg + " = ";
 

@@ -5,22 +5,27 @@ import java.util.Scanner;
 public class FactorialRecNorm {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(args[0]);
-        long arg = input.nextLong();
+        if (args.length != 0) {
 
-        if (arg >= 0 && arg < 21) {
+            Scanner input = new Scanner(args[0]);
+            long arg = input.nextLong();
 
-            for (int t = 1; t <= arg; t++) {
-                if (t == arg) {
-                    System.out.print(t + " = ");
-                } else {
-                    System.out.print(t + " * ");
+            if (arg >= 0 && arg < 21) {
+
+                for (int t = 1; t <= arg; t++) {
+                    if (t == arg) {
+                        System.out.print(t + " = ");
+                    } else {
+                        System.out.print(t + " * ");
+                    }
                 }
-            }
 
-            System.out.println(fuctorial(arg));
+                System.out.println(fuctorial(arg));
+            } else {
+                System.out.println("Неверный ввод, укажите положительное число не больше 20");
+            }
         } else {
-            System.out.println("Неверный ввод, укажите положительное число не больше 20");
+            System.out.println("Пустой аргумент! Введите значение от 0 до 20");
         }
     }
 
@@ -30,7 +35,7 @@ public class FactorialRecNorm {
      * @return фактриал полученной переменной
      */
     public static long fuctorial (long arg) {
-        long result = 1;
+        long result;
 
         if (arg == 0) {
             return 1;

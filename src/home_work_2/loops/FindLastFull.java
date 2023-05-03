@@ -5,43 +5,49 @@ import java.util.Scanner;
 public class FindLastFull {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(args[0]);
+        if (args.length != 0) {
 
-        if (input.hasNextInt()) {
-            long arg = input.nextLong();
+            Scanner input = new Scanner(args[0]);
 
-            if (arg >= 0) {
+            if (input.hasNextInt()) {
+                long arg = input.nextLong();
+                OverflowResults checkOverflow = checkFull(arg);
 
-                if (checkFull(arg)[1] == 0) {
+                if (arg >= 0) {
 
-                    for (int t = 1; t <= arg; t++) {
-                        if (t == arg) {
-                            System.out.print(t + " = ");
-                        } else {
-                            System.out.print(t + " * ");
+                    if (checkOverflow.notOverflow) {
+
+                        for (int t = 1; t <= arg; t++) {
+                            if (t == arg) {
+                                System.out.print(t + " = ");
+                            } else {
+                                System.out.print(t + " * ");
+                            }
                         }
-                    }
 
-                    System.out.println(checkFull(arg)[0]);
+                        System.out.println(checkOverflow.result);
+                    } else {
+                        System.out.println("Результат превышает размер типа переменой, значение до превышения = " + checkOverflow.beforeOverflow);
+                    }
                 } else {
-                    System.out.println("Результат превышает размер типа переменой, значение до превышения = "+checkFull(arg)[2]);
+                    System.out.println("Неверный ввод, укажите положительное число не больше 20");
                 }
             } else {
-                System.out.println("Неверный ввод, укажите положительное число не больше 20");
+                System.out.println("Неверный ввод, указано не число! Введите число от 0 до 20");
             }
         } else {
-            System.out.println("Неверный ввод, указано не число! Введите число от 0 до 20");
+            System.out.println("Пустой аргумент! Введите значение от 0 до 20");
         }
     }
 
     /**
      *Метод вычисляет факториал полученного числа, а также проверят переполненность результата, в случае переполнения указывает последнее число факториал которого можно получить без переполнения
      * @param arg значение переменной факториал которой необходимо рассчитать
-     * @return возвращает массив который содержит факториал указанного числа, статус переполненности поля, если значение 0 - поле нормального размера, если значение 1 - поле переполнено, результат вычисления будет некорретный, а также последнее значение аргумента факториал которого можно получить без переполнения
+     * @return возвращает класс в котором хранится reuslt - результат вычисления факториала указанного числа,notOverflow - статус переполненности поля, beforeOverflow - последнее значение аргумента факториал которого можно получить без переполнения
      */
-    public static long[] checkFull(long arg) {
+    public static OverflowResults checkFull(long arg) {
         long result = 1;
-        long isFull = 0;
+        boolean notFull = true;
         long oldResult;
         int i = 1;
 
@@ -50,7 +56,7 @@ public class FindLastFull {
             result = result * i;
             if (oldResult > result || result == 0) {
                 --i;
-                isFull = 1;
+                notFull = false;
                 break;
             }
             i++;
@@ -58,6 +64,24 @@ public class FindLastFull {
 
         long lastArg = i;
 
-        return new long[]{result,isFull,lastArg};
+        return new OverflowResults(result,notFull,lastArg);
+    }
+
+    /**
+     * Класс преднахначен для хранени результатов вычисления метода checkFull, ожидает при вызове результат вычисления факториала, статус переполненности поля, значния аргумента факториал которого можно корректно рассчитать
+     */
+    private static class OverflowResults {
+
+        public long result;
+        public boolean notOverflow;
+        public long beforeOverflow;
+
+        OverflowResults (long result, boolean isOverflow, long beforeOverflow) {
+
+            this.result = result;
+            this.notOverflow = isOverflow;
+            this.beforeOverflow = beforeOverflow;
+
+        }
     }
 }
