@@ -9,21 +9,24 @@ public class ArrayPTask {
 
     public static void main(String[] args) {
 
-        int[] arr = {5,12,4,7,5,3,8,9,23,8};
+        int[] arr = {5,12,4,7,5,-3,8,9,23,8};
+
+        System.out.println("Сумма четных положительных: "+arraySum(arr));
+        System.out.println("максимальный эелемент с четным индексом : "+maxElem(arr));
+        System.out.println("Массив из элементов меньше средего : "+Arrays.toString(lessElem(arr)));
+        System.out.println("Массив элементов не входящих в заданный интервал : "+Arrays.toString(cutArr(arr)));
+        System.out.println("Сумма цир массива : "+sumArray(arr));
+
         int[] arr2 = {5,5,16,4,5,9,5,4,5,5};
         cutArr2(arr2);
 
         StorageTwoMin twoMin = twoMinElem(arr);
         StorageTwoMin twoMinShake = twoMinSelfSort();
 
-        System.out.println("Сумма четных положительных: "+arraySum(arr));
-        System.out.println("максимальный эелемент с четным индексом : "+maxElem(arr));
-        System.out.println("Массив из элементов меньше средего : "+Arrays.toString(lessElem(arr)));
         System.out.println("Первое минимальное значение : "+twoMin.min1+", второе минимальное значение : "+twoMin.min2);
         System.out.println("Шейкерная сортировка. Первое минимальное значение : "+twoMinShake.min1+", второе минимальное значение : "+twoMinShake.min2);
-        System.out.println("Массив элементов не входящих в заданный интервал : "+Arrays.toString(cutArr(arr)));
         System.out.println("Отсортированный массив, знечения в интервале заменены на 0 : "+Arrays.toString(arr2));
-        System.out.println("Сумма цир массива : "+sumArray(arr));
+
     }
 
     /**
@@ -119,10 +122,10 @@ public class ArrayPTask {
      * Класс для хранения результатов вычисления метода twoMinElem, принимает и хранит первый и второй минимальный элемент массива
      */
     public static class StorageTwoMin {
-        private int min1;
-        private int min2;
+        public int min1;
+        public int min2;
 
-        StorageTwoMin (int min1, int min2) {
+        public StorageTwoMin(int min1, int min2) {
             this.min1 = min1;
             this.min2 = min2;
         }

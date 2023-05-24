@@ -1,32 +1,29 @@
 package home_work_2.loops;
 
-import java.util.Scanner;
-
 public class FactorialRecNorm {
-    public static void main(String[] args) {
+    public static String factorialCalc (int arg) {
 
-        if (args.length != 0) {
+        String factorial = "";
 
-            Scanner input = new Scanner(args[0]);
-            long arg = input.nextLong();
+        if (arg >= 0 && arg < 21) {
 
-            if (arg >= 0 && arg < 21) {
+            long result = fuctorial(arg);
 
+            if (arg == 0) {
+                factorial = "0";
+            } else {
                 for (int t = 1; t <= arg; t++) {
                     if (t == arg) {
-                        System.out.print(t + " = ");
+                        factorial = factorial + t + " = " + result;
                     } else {
-                        System.out.print(t + " * ");
+                        factorial = factorial + t + " * ";
                     }
                 }
-
-                System.out.println(fuctorial(arg));
-            } else {
-                System.out.println("Неверный ввод, укажите положительное число не больше 20");
             }
         } else {
-            System.out.println("Пустой аргумент! Введите значение от 0 до 20");
+            factorial = "Неверный ввод, укажите положительное число не больше 20";
         }
+        return factorial;
     }
 
     /**
@@ -34,7 +31,7 @@ public class FactorialRecNorm {
      * @param arg значение факториал которого необходимо получить
      * @return фактриал полученной переменной
      */
-    public static long fuctorial (long arg) {
+    public static long fuctorial (int arg) {
         long result;
 
         if (arg == 0) {

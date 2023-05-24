@@ -6,8 +6,12 @@ public class FindMidArr {
         int b = 5;
         int c = 2;
         int[] arr = {a, b, c};
+        findMidInArr(arr);
+    }
 
+    public static int findMidInArr (int[] arr) {
         int max = arr[0];
+        int mid=0;
 
         for (int i : arr) {
             if (i > max) {
@@ -23,13 +27,18 @@ public class FindMidArr {
             }
         }
 
-        for (int j : arr) {
-            if (j != max && j != min) {
-                System.out.println("среднее значение - "+j);
+        if (max == min) {
+            System.out.println("среднее значение - " + max);
+            mid = max;
+        } else {
+            for (int j : arr) {
+                if (j != max && j != min) {
+                    System.out.println("среднее значение - " + j);
+                    mid = j;
+                }
             }
         }
-
-
+        return mid;
     }
 }
 

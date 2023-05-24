@@ -9,15 +9,19 @@ public class CheckOdd {
 
         if (numInput.hasNextInt()) {
             int a = numInput.nextInt();
-            if (a%2==0) {
-                System.out.println("Число " + a + " - четное");
-            } else {
-                System.out.println("Число " + a + " - нечетное");
-            }
-
+            numberType(a);
         } else {
             System.out.println("Wrong Input. Restart and try again");
         }
+    }
 
+    public static String numberType (int a) {
+        if (a%2==0) {
+            System.out.println("Число " + a + " - четное");
+            return "четное";
+        } else {
+            System.out.println("Число " + a + " - нечетное");
+            return "нечетное";
+        }
     }
 }

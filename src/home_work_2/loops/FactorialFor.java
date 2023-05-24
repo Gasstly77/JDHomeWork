@@ -1,43 +1,38 @@
 package home_work_2.loops;
 
-import java.util.Scanner;
-
 public class FactorialFor {
-    public static void main(String[] args) {
 
-        if (args.length != 0) {
+    public static String factorialForCalculation (int arg) {
 
-            Scanner input = new Scanner(args[0]);
+        String factorial = "";
 
-            if (input.hasNextInt()) {
+        if (arg >= 0 && arg < 21) {
 
-                long arg = input.nextLong();
+            long result = factorialForResult(arg);
 
-                if (arg >= 0 && arg < 21) {
-
-                    long result = 1;
-
-                    for (int i = 1; i <= arg; i++) {
-                        result = result * i;
-                    }
-
-                    for (int t = 1; t <= arg; t++) {
-                        if (t == arg) {
-                            System.out.print(t + " = ");
-                        } else {
-                            System.out.print(t + " * ");
-                        }
-                    }
-
-                    System.out.println(result);
-                } else {
-                    System.out.println("Неверный ввод, укажите положительное число не больше 20");
-                }
+            if (arg == 0) {
+                factorial = "0";
             } else {
-                System.out.println("Неверный ввод! Необходимо указывать число в диапозоне от 0 до 20");
+                for (int t = 1; t <= arg; t++) {
+                    if (t == arg) {
+                        factorial = factorial + t + " = " + result;
+                    } else {
+                        factorial = factorial + t + " * ";
+                    }
+                }
             }
         } else {
-            System.out.println("Пустой аргумент! Введите значение от 0 до 20");
+            factorial = "Неверный ввод, укажите положительное число не больше 20";
         }
+        return factorial;
+    }
+
+    public static long factorialForResult (int arg) {
+        long result = 1;
+
+        for (int i = 1; i <= arg; i++) {
+            result = result * i;
+        }
+        return result;
     }
 }

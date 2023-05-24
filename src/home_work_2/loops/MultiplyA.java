@@ -1,17 +1,16 @@
 package home_work_2.loops;
 
 public class MultiplyA {
-    public static void main(String[] args) {
+    public static String multiplyString (long num) {
 
-         long a = 3;
-         long b = 188;
-         long c = -19;
-         long d = 21;
+        SaveResults culcResults = checkFull(num);
 
-        System.out.println("результат умножения на "+a+" выполнения до переполнения - "+checkFull(a)[0]+" результат выполнения после переполнения = "+checkFull(a)[1]);
-        System.out.println("результат умножения на "+b+" выполнения до переполнения - "+checkFull(b)[0]+" результат выполнения после переполнения = "+checkFull(b)[1]);
-        System.out.println("результат умножения на "+c+" выполнения до переполнения - "+checkFull(c)[0]+" результат выполнения после переполнения = "+checkFull(c)[1]);
-        System.out.println("результат умножения на "+d+" выполнения до переполнения - "+checkFull(d)[0]+" результат выполнения после переполнения = "+checkFull(d)[1]);
+        if (num == 1 || num == 0) {
+            return  "Операция не имеет смысла, ответ останется - " + num;
+        } else {
+            return "результат умножения на " + num + " выполнений до переполнения = " + culcResults.oldResult + " результат выполнений после переполнения = " + culcResults.overflow;
+        }
+
     }
 
     /**
@@ -20,7 +19,7 @@ public class MultiplyA {
      * @return возвращает массив чисел в котором хранится результат умножения до переолнения и после переполнения
      */
 
-    public static long[] checkFull(long arg) {
+    public static SaveResults checkFull(long arg) {
         long a = 1;
         long isFull = 0; // 0 - means arg is ok, 1 - arg is full, stop
         long oldResult = 1;
@@ -37,6 +36,18 @@ public class MultiplyA {
             } while ((!(oldResult < 0 && a < 0)) || Math.abs(oldResult) < Math.abs(a));
         }
 
-        return new long[]{oldResult,a};
+        return new SaveResults(oldResult,a);
+    }
+
+    private static class SaveResults {
+
+        public long oldResult;
+        public long overflow;
+
+        SaveResults (long oldResult, long overflow) {
+
+            this.oldResult = oldResult;
+            this.overflow = overflow;
+        }
     }
 }

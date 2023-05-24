@@ -1,7 +1,19 @@
 package home_work_2.loops;
 
 public class MultiplicationTable {
-    public static void main(String[] args) {
+
+    public static String multiplicationTable() {
+
+        String tableTop = "";
+        String tableBot = "";
+        String resultTable = "";
+        String separator = "";
+
+        for (int x = 0; x < 65; x++) {
+            separator = separator + "_";
+        }
+
+        separator = separator + "\n";
 
         int[] numArr = {2,3,4,5,6,7,8,9};
 
@@ -15,14 +27,8 @@ public class MultiplicationTable {
             delimiter2 = delLength(numArr[1],i);
             delimiter3 = delLength(numArr[2],i);
 
-            System.out.println(numArr[0]+" x "+i+" = "+numArr[0]*i+delimiter1+numArr[1]+" x "+i+" = "+numArr[1]*i+delimiter2+numArr[2]+" x "+i+" = "+numArr[2]*i+delimiter3+numArr[3]+" x "+i+" = "+numArr[3]*i);
+            tableTop = tableTop + numArr[0]+" x "+i+" = "+numArr[0]*i+delimiter1+numArr[1]+" x "+i+" = "+numArr[1]*i+delimiter2+numArr[2]+" x "+i+" = "+numArr[2]*i+delimiter3+numArr[3]+" x "+i+" = "+numArr[3]*i + "\n";
         }
-
-        for (int x = 0; x < 65; x++) {
-            System.out.print("_");
-        }
-
-        System.out.println("");
 
         for (int i = 1; i <=10; i++) {
 
@@ -30,10 +36,12 @@ public class MultiplicationTable {
             delimiter2 = delLength(numArr[5],i);
             delimiter3 = delLength(numArr[6],i);
 
-            System.out.println(numArr[4]+" x "+i+" = "+numArr[4]*i+delimiter1+numArr[5]+" x "+i+" = "+numArr[5]*i+delimiter2+numArr[6]+" x "+i+" = "+numArr[6]*i+delimiter3+numArr[7]+" x "+i+" = "+numArr[7]*i);
+            tableBot =tableBot + numArr[4]+" x "+i+" = "+numArr[4]*i+delimiter1+numArr[5]+" x "+i+" = "+numArr[5]*i+delimiter2+numArr[6]+" x "+i+" = "+numArr[6]*i+delimiter3+numArr[7]+" x "+i+" = "+numArr[7]*i + "\n";
         }
 
+        resultTable = tableTop + separator + tableBot;
 
+        return resultTable;
     }
 
     /**

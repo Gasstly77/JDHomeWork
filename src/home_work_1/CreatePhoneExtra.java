@@ -23,7 +23,6 @@ public class CreatePhoneExtra {
         }else{
             System.out.println("Wrong length, insert 10 numbers");
         }
-
     }
 
     /**

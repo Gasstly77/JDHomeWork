@@ -16,13 +16,20 @@ public class CalculatorWithOperator implements ICalculator {
     }
 
     public double Division (double divider1, double divider2) {
-        return (double) divider1 / divider2;
+        if (divider2 == 0) {
+            System.out.println("На 0 делить нельзя!");
+            return 0;
+        } else {
+            return (double) divider1 / divider2;
+        }
     }
 
     public double Exponentiation (double number, int extent) {
-        double result = 0;
-        for (int i = 0; i < extent; i++) {
-            result = number * number;
+        double result = number;
+        for (int i = 1; i < extent; i++) {
+            if (extent != 1) {
+                result = result * number;
+            }
         }
         return result;
     }

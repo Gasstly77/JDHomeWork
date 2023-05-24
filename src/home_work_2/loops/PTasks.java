@@ -3,25 +3,12 @@ package home_work_2.loops;
 import java.util.Random;
 
 public class PTasks {
-
-    public static void main(String[] args) {
-
-        StorageEvenOdd evenOddCount = evenOdd(34658);
-
-        System.out.println("Наибольшая цифра числа - "+maxDig(123));
-        System.out.println("Вероятность четных чисел - "+randomPos()+"%");
-        System.out.println("количество четных : "+evenOddCount.even+", количество нечетных : "+evenOddCount.odd);
-        System.out.println("Ряд Фибоначчи, первые n элементов - "+feb(6));
-        System.out.println("Числово ряд из l чисел с s шагом - "+stepNumber(10,2));
-        System.out.println("Перевернутое число - "+reverse(654321));
-    }
-
     /**
      * Поиск наибольшей цифры натурального числа
      * @param n число которое необхоимо проанализировать
      * @return наибольшую цифру указанного числа
      */
-    private static long maxDig(long n) {
+    public static long maxDig(long n) {
         long max = 0;
         long num;
         while (n > 0) {
@@ -43,7 +30,15 @@ public class PTasks {
      * @param n число которое необхоимо проанализировать
      * @return класс в котором хранится количество четных и нечетных цифр переданного числа
      */
-    private static StorageEvenOdd evenOdd(long n) {
+    public static long returnEven (long n) {
+        StorageEvenOdd evenOddCount = evenOdd(n);
+        return evenOddCount.even;
+    }
+    public static long returnOdd (long n) {
+        StorageEvenOdd evenOddCount = evenOdd(n);
+        return evenOddCount.odd;
+    }
+    public static StorageEvenOdd evenOdd(long n) {
         long oddCount = 0;
         long evenCount = 0;
         long num;
@@ -78,7 +73,7 @@ public class PTasks {
      * @param n количество цифр ряда Фибоначчи до которого будет расчет
      * @return возвращает строку в которой прописаны элементы ряда Фибоначчи до указанного элемнта
      */
-    private static StringBuilder feb(long n) {
+    public static String feb(long n) {
         StringBuilder febNum = new StringBuilder();
         long nextNum = 0;
         long currNum = 0;
@@ -101,7 +96,7 @@ public class PTasks {
                 prevNum = 1;
             }
         }
-        return febNum;
+        return febNum.toString();
     }
 
     /**
@@ -110,7 +105,7 @@ public class PTasks {
      * @param s шаг с котороым будет строится ряд чисел
      * @return Возвращает строку указанной длины с рядом чисел через указанный шаг
      */
-    private static StringBuilder stepNumber(long l, long s) {
+    public static String stepNumber(long l, long s) {
         StringBuilder stepNum = new StringBuilder();
         long step = s;
         long len = l;
@@ -129,7 +124,7 @@ public class PTasks {
             }
 
         }
-        return stepNum;
+        return stepNum.toString();
     }
 
     /**
@@ -137,7 +132,7 @@ public class PTasks {
      * @param n число которое необходимо перевернуть
      * @return возвращает перевернутое число
      */
-    private static long reverse(long n) {
+    public static long reverse(long n) {
         long num = n;
         long result = 0;
         long next;
@@ -157,7 +152,7 @@ public class PTasks {
      *  Проверяет процент четных числел в 1000 генераций рандомного числа
      * @return Возвращает процент выпадения четных чисел
      */
-    private static int randomPos () {
+    public static int randomPos () {
 
         int checkNum;
         int even = 0;
@@ -173,5 +168,13 @@ public class PTasks {
 
         return (int) (even*100) / numOper;
 
+    }
+
+    public static boolean randomTrue () {
+        if (randomPos() >= 40 && randomPos() <= 60) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

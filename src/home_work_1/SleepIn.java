@@ -1,30 +1,21 @@
 package home_work_1;
 
-import java.util.Scanner;
-
 public class SleepIn {
     public static void main(String[] args) {
-        Scanner week = new Scanner(System.in);
-        System.out.print("Is it weekday insert true or false: ");
-
-        if (week.hasNextBoolean()) {
-            boolean weekday = week.nextBoolean();
-
-            Scanner vac = new Scanner(System.in);
-            System.out.print("Is it vacation insert true or false: ");
-
-            if (vac.hasNextBoolean()) {
-                boolean vacation = vac.nextBoolean();
-
-                boolean sleep = !(weekday && !vacation);
-
-                System.out.println("You can continue to sleep: " + sleep);
-            }else{
-                System.out.println("Wrong input! Type true of false");
-            }
-        }else{
-            System.out.println("Wrong input! Type true of false");
+        if (sleepIn(true,false)) {
+            System.out.println("Спим дальше");
+        } else {
+            System.out.println("Встаем!");
         }
+    }
 
+    /**
+     * Отвечает на вопрос, можно ли дальше спать, на основании переданных параметров.
+     * @param weekday - у вас рабочий день?
+     * @param vacation - у вас сейчас отпуск?
+     * @return true - можно спать, false - нужно вставать
+     */
+    public static boolean sleepIn(boolean weekday, boolean vacation) {
+        return vacation || !weekday;
     }
 }

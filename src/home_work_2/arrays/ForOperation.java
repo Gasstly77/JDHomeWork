@@ -3,26 +3,44 @@ package home_work_2.arrays;
 public class ForOperation implements IArraysOperation{
 
     @Override
-    public void allArray(int[] arr) {
+    public String allArray(int[] arr) {
+        String allElem = "";
         for (int i = 0; i < arr.length; i++) {
             int elem = arr[i];
-            System.out.print(elem + " ");
+            if (i == arr.length-1) {
+                allElem =allElem + elem;
+            } else {
+                allElem =allElem + elem + ", ";
+            }
         }
+        return allElem;
     }
 
     @Override
-    public void everySecondElement(int[] arr) {
+    public String everySecondElement(int[] arr) {
+        String everySecond = "";
         for (int i = 0; i < arr.length; i+=2) {
             int secondElem = arr[i];
-            System.out.print(secondElem + " ");
+            if (i == arr.length-1) {
+                everySecond = everySecond + secondElem;
+            } else {
+                everySecond = everySecond + secondElem + ", ";
+            }
         }
+        return everySecond;
     }
 
     @Override
-    public void elementsInReverse(int[] arr) {
+    public String elementsInReverse(int[] arr) {
+        String reverse = "";
         for (int i = arr.length-1; i >= 0; i--) {
             int reverseElem = arr[i];
-            System.out.print(reverseElem + " ");
+            if (i == 0) {
+                reverse = reverse + reverseElem;
+            } else {
+                reverse = reverse + reverseElem + ", ";
+            }
         }
+        return reverse;
     }
 }

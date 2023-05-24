@@ -16,7 +16,12 @@ public class CalculatorWithMathCopy implements ICalculator {
     }
 
     public double Division (double divider1, double divider2) {
-        return (double) divider1 / divider2;
+        if (divider2 == 0) {
+            System.out.println("На 0 делить нельзя!");
+            return 0;
+        } else {
+            return (double) divider1 / divider2;
+        }
     }
 
     public double Exponentiation (double number, int extent) {
