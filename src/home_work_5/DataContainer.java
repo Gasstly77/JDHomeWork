@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 public class DataContainer <T> implements Iterable<T>{
-    T[] data;
+    private T[] data;
 
     public DataContainer(T[] data) {
         this.data = data;
