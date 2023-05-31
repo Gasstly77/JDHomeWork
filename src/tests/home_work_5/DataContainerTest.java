@@ -21,6 +21,33 @@ public class DataContainerTest {
     }
 
     @Test
+    public void CheckStringAddInNull (){
+        String [] arr = {"Тест",null,"Пустое поле"};
+        DataContainer<String> container = new DataContainer<>(arr);
+        int actualIndex = container.add("Привет");
+        container.add("Как дела");
+        container.add("Работал");
+        container.add("Давай потом");
+        String actual = container.toString();
+        String expected = "[Тест, Привет, Пустое поле, Как дела, Работал, Давай потом]";
+        Assertions.assertEquals(expected,actual);
+        int expectedIndex = 1;
+        Assertions.assertEquals(expectedIndex,actualIndex);
+    }
+
+    @Test
+    public void CheckStringAddNull (){
+        String [] arr = {"Тест","Добовления", "Пустого поля"};
+        DataContainer<String> container = new DataContainer<>(arr);
+        int actualIndex = container.add(null);
+        int expectedIndex = -1;
+        String actual = container.toString();
+        String expected = "[Тест, Добовления, Пустого поля]";
+        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expectedIndex,actualIndex);
+    }
+
+    @Test
     public void CheckIntegerAdd (){
         Integer [] arr = {1};
         DataContainer<Integer> container = new DataContainer<>(arr);
@@ -71,6 +98,16 @@ public class DataContainerTest {
         Assertions.assertEquals(expected2,actual2);
         Assertions.assertEquals(expected3,actual3);
         Assertions.assertEquals(expected4,actual4);
+    }
+
+    @Test
+    public void CheckGetFalse (){
+        String [] arr = {};
+        DataContainer<String> container = new DataContainer<>(arr);
+        container.add("Привет");
+        Object actual = container.get(12);
+        Object expected = null;
+        Assertions.assertEquals(expected,actual);
     }
 
     @Test

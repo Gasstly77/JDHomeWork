@@ -11,42 +11,57 @@ public class DataContainer <T> implements Iterable<T>{
         this.data = data;
     }
 
+    /**
+     * Метод для добавления нового элемента в хранилище.
+     * @param item элемент который необходимо добавить.
+     * @return Возвращает номер позиции в которую были вставлены данные.
+     */
     public int add (T item) {
         int index = 0;
         boolean emptySpace = false;
 
-        T[] currentArray = this.data;
-        for (T el : currentArray) {
-            if (el == null) {
-                emptySpace = true;
-            }
-        }
-
-        if (currentArray.length == 0) {
-            index = 0;
-            currentArray = Arrays.copyOf(currentArray,currentArray.length+1);
-            currentArray[index] = item;
-            this.data = currentArray;
-        }  else if (!emptySpace) {
-            currentArray = Arrays.copyOf(currentArray,currentArray.length+1);
-            currentArray[currentArray.length-1] = item;
-            this.data = currentArray;
-            index = currentArray.length-1;
+        if (item == null) {
+            return -1;
         } else {
-            boolean placed = false;
-            for (int i = 0; i < currentArray.length; i++) {
-                index = i;
-                if (currentArray[i] == null) {
-                    currentArray[i] = item;
-                    placed = true;
+
+            T[] currentArray = this.data;
+            for (T el : currentArray) {
+                if (el == null) {
+                    emptySpace = true;
                 }
-                if (placed)
-                    break;
             }
+
+            if (currentArray.length == 0) {
+                index = 0;
+                currentArray = Arrays.copyOf(currentArray, currentArray.length + 1);
+                currentArray[index] = item;
+                this.data = currentArray;
+            } else if (!emptySpace) {
+                currentArray = Arrays.copyOf(currentArray, currentArray.length + 1);
+                currentArray[currentArray.length - 1] = item;
+                this.data = currentArray;
+                index = currentArray.length - 1;
+            } else {
+                boolean placed = false;
+                for (int i = 0; i < currentArray.length; i++) {
+                    index = i;
+                    if (currentArray[i] == null) {
+                        currentArray[i] = item;
+                        placed = true;
+                    }
+                    if (placed)
+                        break;
+                }
+            }
+            return index;
         }
-        return index;
     }
 
+    /**
+     * Метод для получение значения элемента из хранилища по индексу.
+     * @param index идекс элемента который необходимо получить.
+     * @return возвращает элемент который хранится под указанным индексом.
+     */
     public T get (int index) {
         if (index >= this.data.length || index < 0) {
             return null;
@@ -56,10 +71,19 @@ public class DataContainer <T> implements Iterable<T>{
         }
     }
 
+    /**
+     * Метод возвращает содержимое хранилища.
+     * @return массив элементов содержащихся в хранилище.
+     */
     public T[] getItems() {
         return this.data;
     }
 
+    /**
+     * Метод удаляет элемент из поля data по индексу.
+     * @param index индекс элемента который необходимо удалить.
+     * @return возвращает true в случае успешного удаления, в других случаях возвращает false.
+     */
     public boolean delete(int index) {
         T[] currentArray = this.data;
         if (index >= this.data.length || index < 0) {
@@ -81,6 +105,11 @@ public class DataContainer <T> implements Iterable<T>{
         }
     }
 
+    /**
+     * Метод удаляет переданный элемент из поля data.
+     * @param item значение элемента который необходимо удалить.
+     * @return возвращает true в случае успешного удаления, в других случаях возвращает false.
+     */
     public boolean delete(T item) {
         int replaceIndex = 0;
         T[] currentArray = this.data;
@@ -116,6 +145,10 @@ public class DataContainer <T> implements Iterable<T>{
         }
     }
 
+    /**
+     * НЕ СТАТИЧЕСКИЙ метод сортировки данных записанных в поле data используя реализацию сравнения из ПЕРЕДАННОГО объекта comparator.
+     * @param comparator объекта comparator который указывает метод сортировки данных.
+     */
     public void sort(Comparator<T> comparator) {
         T[] arr = this.data;
         int right = arr.length-1;
@@ -137,6 +170,10 @@ public class DataContainer <T> implements Iterable<T>{
         this.data=arr;
     }
 
+    /**
+     * Метод сортировки данных. Данный метод сортирует элементы в ПЕРЕДАННОМ объекте DataContainer используя реализацию сравнения вызываемый у хранимых объектов.
+     * @param container контейнер конкретного типа.
+     */
     public void sort (DataContainer < ? extends Comparable > container){
         boolean haveChanges;
         do {
@@ -150,6 +187,12 @@ public class DataContainer <T> implements Iterable<T>{
         } while (haveChanges);
     }
 
+    /**
+     * Метод сортирует элементы в ПЕРЕДАННОМ объекте DataContainer используя реализацию сравнения из ПЕРЕДАННОГО объекта интерфейса Comparator.
+     * @param container объект контейнера.
+     * @param comparator метод используемый для сравнения.
+     * @param <C> тип элемента контейнера.
+     */
     public <C> void sort(DataContainer<C> container, Comparator<C> comparator) {
         boolean haveChanges;
         do {
@@ -163,6 +206,10 @@ public class DataContainer <T> implements Iterable<T>{
         } while (haveChanges);
     }
 
+    /**
+     * Переопределение метода toString() в классе.
+     * @return возвращает строку с содержимым data без ячеек в которых хранится null.
+     */
     @Override
     public String toString(){
         String newString = "[";
@@ -178,6 +225,13 @@ public class DataContainer <T> implements Iterable<T>{
         return newString;
     }
 
+    /**
+     * Вспомогательный метод для замены местами элементов контейнера.
+     * @param swapArray массив элементов в котором производится смена позиций элемента.
+     * @param index1 индекс первого элемента который нужно поменять.
+     * @param index2 индейс второго элемента который нежно поменять.
+     * @param <T> тип элементов контейнера.
+     */
     private static <T> void swap (T[] swapArray, int index1, int index2) {
         T swappingElem = swapArray [index1];
         swapArray[index1] = swapArray[index2];
@@ -189,6 +243,10 @@ public class DataContainer <T> implements Iterable<T>{
         return new DataIterator<>(this.data);
     }
 
+    /**
+     * Реализация интерфейса Iterator в DataContainer.
+     * @param <T> тип элементов хранилища.
+     */
     private class DataIterator<T> implements Iterator<T> {
         private T[] data;
         private int index;
