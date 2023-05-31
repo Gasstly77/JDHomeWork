@@ -118,7 +118,7 @@ public class DataContainer <T> implements Iterable<T>{
             return false;
         } else {
             for (int j = 0; j <= currentArray.length; j++) {
-                if (currentArray[j].equals(item)) {
+                if (item.equals(currentArray[j])) {
                     replaceIndex = j;
                     deletElem = true;
                 }
