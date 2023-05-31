@@ -2,11 +2,12 @@ package home_work_5;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 
-public class DataContainer <T>{
+public class DataContainer <T> implements Iterable<T>{
     T[] data;
 
-    DataContainer(T[] data) {
+    public DataContainer(T[] data) {
         this.data = data;
     }
 
@@ -22,7 +23,7 @@ public class DataContainer <T>{
         }
 
         if (currentArray.length == 0) {
-            index =0;
+            index = 0;
             currentArray = Arrays.copyOf(currentArray,currentArray.length+1);
             currentArray[index] = item;
             this.data = currentArray;
@@ -46,7 +47,7 @@ public class DataContainer <T>{
         return index;
     }
 
-    public <T>T get (int index) {
+    public T get (int index) {
         if (index >= this.data.length || index < 0) {
             return null;
         } else {
@@ -84,30 +85,34 @@ public class DataContainer <T>{
         int replaceIndex = 0;
         T[] currentArray = this.data;
         boolean deletElem = false;
-        for (int j = 0; j <= currentArray.length; j++) {
-            if (currentArray[j].equals(item)) {
-                replaceIndex = j;
-                deletElem = true;
-            }
-            if (deletElem)
-                break;
-        }
-        if (!deletElem) {
+        if (item == null) {
             return false;
         } else {
-            currentArray[replaceIndex] = null;
-            T nextElem;
-            for (int i = 0; i < currentArray.length-1; i++) {
-                if (currentArray[i] == null) {
-                    nextElem = currentArray[i+1];
-                    currentArray[i+1] = currentArray[i];
-                    currentArray[i] = nextElem;
+            for (int j = 0; j <= currentArray.length; j++) {
+                if (currentArray[j].equals(item)) {
+                    replaceIndex = j;
+                    deletElem = true;
                 }
-                if (currentArray[currentArray.length-1] == null)
+                if (deletElem)
                     break;
             }
-            this.data = Arrays.copyOf(currentArray,currentArray.length-1);
-            return true;
+            if (!deletElem) {
+                return false;
+            } else {
+                currentArray[replaceIndex] = null;
+                T nextElem;
+                for (int i = 0; i < currentArray.length - 1; i++) {
+                    if (currentArray[i] == null) {
+                        nextElem = currentArray[i + 1];
+                        currentArray[i + 1] = currentArray[i];
+                        currentArray[i] = nextElem;
+                    }
+                    if (currentArray[currentArray.length - 1] == null)
+                        break;
+                }
+                this.data = Arrays.copyOf(currentArray, currentArray.length - 1);
+                return true;
+            }
         }
     }
 
@@ -132,6 +137,32 @@ public class DataContainer <T>{
         this.data=arr;
     }
 
+    public void sort (DataContainer < ? extends Comparable > container){
+        boolean haveChanges;
+        do {
+            haveChanges = false;
+            for (int i = 0; i < container.data.length-1; i++) {
+                if (container.data[i].compareTo(container.data[i + 1]) > 0) {
+                    swap(container.data, i, i + 1);
+                    haveChanges = true;
+                }
+            }
+        } while (haveChanges);
+    }
+
+    public <C> void sort(DataContainer<C> container, Comparator<C> comparator) {
+        boolean haveChanges;
+        do {
+            haveChanges = false;
+            for (int i = 0; i < container.data.length-1; i++) {
+                if (comparator.compare(container.data[i],container.data[i + 1]) > 0) {
+                    swap(container.data, i, i + 1);
+                    haveChanges = true;
+                }
+            }
+        } while (haveChanges);
+    }
+
     @Override
     public String toString(){
         String newString = "[";
@@ -145,6 +176,37 @@ public class DataContainer <T>{
         }
         newString = newString + "]";
         return newString;
+    }
+
+    private static <T> void swap (T[] swapArray, int index1, int index2) {
+        T swappingElem = swapArray [index1];
+        swapArray[index1] = swapArray[index2];
+        swapArray[index2] = swappingElem;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new DataIterator<>(this.data);
+    }
+
+    private class DataIterator<T> implements Iterator<T> {
+        private T[] data;
+        private int index;
+
+        public DataIterator(T[] data) {
+            this.data = data;
+            this.index = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index < this.data.length && this.data[index] != null;
+        }
+
+        @Override
+        public T next() {
+            return this.data[index++];
+        }
     }
 }
 
