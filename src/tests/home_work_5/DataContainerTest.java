@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class DataContainerTest {
     @Test
-    public void CheckStringAdd (){
+    public void checkStringAdd (){
         String [] arr = {"Тест"};
         DataContainer<String> container = new DataContainer<>(arr);
         container.add("Привет");
@@ -21,7 +21,18 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckStringAddInNull (){
+    public void checkStringVoid (){
+        String [] arr = {};
+        DataContainer<String> container = new DataContainer<>(arr);
+        container.add("Привет");
+        container.add("Как дела");
+        String actual = container.toString();
+        String expected = "[Привет, Как дела]";
+        Assertions.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void checkStringAddInNull (){
         String [] arr = {"Тест",null,"Пустое поле"};
         DataContainer<String> container = new DataContainer<>(arr);
         int actualIndex = container.add("Привет");
@@ -36,7 +47,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckStringAddNull (){
+    public void checkStringAddNull (){
         String [] arr = {"Тест","Добовления", "Пустого поля"};
         DataContainer<String> container = new DataContainer<>(arr);
         int actualIndex = container.add(null);
@@ -48,7 +59,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckIntegerAdd (){
+    public void checkIntegerAdd (){
         Integer [] arr = {1};
         DataContainer<Integer> container = new DataContainer<>(arr);
         container.add(2);
@@ -61,7 +72,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckIndex (){
+    public void checkIndex (){
         String [] arr = {"Тест"};
         DataContainer<String> container = new DataContainer<>(arr);
         int actual = container.add("Привет");
@@ -70,7 +81,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckEmptyIndex (){
+    public void checkEmptyIndex (){
         String [] arr = {};
         DataContainer<String> container = new DataContainer<>(arr);
         int actual = container.add("Привет");
@@ -79,7 +90,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckGetByIndex (){
+    public void checkGetByIndex (){
         String [] arr = {};
         DataContainer<String> container = new DataContainer<>(arr);
         int index1 = container.add("Привет");
@@ -101,7 +112,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckGetFalse (){
+    public void checkGetFalse (){
         String [] arr = {};
         DataContainer<String> container = new DataContainer<>(arr);
         container.add("Привет");
@@ -111,7 +122,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void CheckGetArray (){
+    public void checkGetArray (){
         Integer [] arr = {1};
         DataContainer<Integer> container = new DataContainer<>(arr);
         container.add(2);
@@ -124,7 +135,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void DeleteByElem (){
+    public void deleteByElem (){
         Integer [] arr = {1};
         DataContainer<Integer> container = new DataContainer<>(arr);
         container.add(2);
@@ -138,7 +149,7 @@ public class DataContainerTest {
     }
 
     @Test
-    public void DeleteByIndexFalse (){
+    public void deleteByIndexFalse (){
         Integer [] arr = {1};
         DataContainer<Integer> container = new DataContainer<>(arr);
         container.add(2);
