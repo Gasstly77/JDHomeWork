@@ -7,28 +7,28 @@ import org.junit.jupiter.api.Test;
 
 public class FindMidTest {
     @Test
-    public void CheckArr (){
+    public void checkArr (){
         int[] checkArr = {1,3,5};
         int expected = 3;
         int actual = FindMid.findMid(checkArr[0],checkArr[1],checkArr[2]);
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void CheckNegativeArr (){
+    public void checkNegativeArr (){
         int[] checkArr = {-56,-23,-95};
         int expected = -56;
         int actual = FindMid.findMid(checkArr[0],checkArr[1],checkArr[2]);
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void CheckMixArr (){
+    public void checkMixArr (){
         int[] checkArr = {-80,13,5};
         int expected = 5;
         int actual = FindMid.findMid(checkArr[0],checkArr[1],checkArr[2]);
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void CheckSimilar (){
+    public void checkSimilar (){
         int[] checkArr = {5,5,5};
         int expected = 5;
         int actual = FindMid.findMid(checkArr[0],checkArr[1],checkArr[2]);

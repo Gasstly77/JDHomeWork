@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class CreatePhoneNumberArrTest {
     @Test
-    public void CheckPhoneNumberFormat (){
+    public void checkPhoneNumberFormat (){
        int [] phoneNumber = {4,5,6,3,2,1,9,0,7,8};
        String expected = "(456) 321-9078";
        String actual = CreatePhoneNumberArr.createPhoneNumber(phoneNumber);
@@ -14,7 +14,7 @@ public class CreatePhoneNumberArrTest {
     }
 
     @Test
-    public void CheckValidation (){
+    public void checkValidation (){
         String numArr = "4, 5  ,6,3  2,1,9,   0,7 ,8";
         int [] expected = {4,5,6,3,2,1,9,0,7,8};
         int [] actual = CreatePhoneNumberArr.makeArr(numArr);
@@ -22,7 +22,7 @@ public class CreatePhoneNumberArrTest {
     }
 
     @Test
-    public void CheckValidationNull (){
+    public void checkValidationNull (){
         String numArr = "4,5,6,3,2,1,9,f,7,8";
         int [] expected = null;
         int [] actual = CreatePhoneNumberArr.makeArr(numArr);

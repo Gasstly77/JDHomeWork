@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 public class YourNameTest {
     @Test
-    public void CheckYourNameIfV (){
+    public void checkYourNameIfV (){
         String name = "Вася";
         String expected = "Привет! \n Я так долго тебя ждал";
         ICommunicationPrinter welcomMessage = new YourName1();
@@ -18,7 +18,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameIfA (){
+    public void checkYourNameIfA (){
         String name = "Анастасия";
         String expected = "Я так долго тебя ждал";
         ICommunicationPrinter welcomMessage = new YourName1();
@@ -27,7 +27,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameIfO (){
+    public void checkYourNameIfO (){
         String name = "Герман";
         String expected = "Добрый день, а вы кто?";
         ICommunicationPrinter welcomMessage = new YourName1();
@@ -36,7 +36,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameIfElseV (){
+    public void checkYourNameIfElseV (){
         String name = "Вася";
         String expected = "Привет! \n Я так долго тебя ждал";
         ICommunicationPrinter welcomMessage = new YourName2();
@@ -45,7 +45,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameIfElseA (){
+    public void checkYourNameIfElseA (){
         String name = "Анастасия";
         String expected = "Я так долго тебя ждал";
         ICommunicationPrinter welcomMessage = new YourName2();
@@ -54,7 +54,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameIfElseO (){
+    public void checkYourNameIfElseO (){
         String name = "Герман";
         String expected = "Добрый день, а вы кто?";
         ICommunicationPrinter welcomMessage = new YourName2();
@@ -63,7 +63,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameSwitchV (){
+    public void checkYourNameSwitchV (){
         String name = "Вася";
         String expected = "Привет! \n Я так долго тебя ждал";
         ICommunicationPrinter welcomMessage = new YourName3();
@@ -72,7 +72,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameSwitchA (){
+    public void checkYourNameSwitchA (){
         String name = "Анастасия";
         String expected = "Я так долго тебя ждал";
         ICommunicationPrinter welcomMessage = new YourName3();
@@ -81,7 +81,7 @@ public class YourNameTest {
     }
 
     @Test
-    public void CheckYourNameSwitchO (){
+    public void checkYourNameSwitchO (){
         String name = "Герман";
         String expected = "Добрый день, а вы кто?";
         ICommunicationPrinter welcomMessage = new YourName3();

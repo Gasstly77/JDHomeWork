@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class LeapYearTest {
 
     @Test
-    public void CheckNormalYear (){
+    public void checkNormalYear (){
         int normalYear = 2001;
         String expected = "Невисокосный";
         String actual = LeapYear.yearType(normalYear);
@@ -15,7 +15,7 @@ public class LeapYearTest {
     }
 
     @Test
-    public void CheckYearFourH (){
+    public void checkYearFourH (){
         int normalYear = 400;
         String expected = "Високосный";
         String actual = LeapYear.yearType(normalYear);
@@ -23,7 +23,7 @@ public class LeapYearTest {
     }
 
     @Test
-    public void CheckYearOneH (){
+    public void checkYearOneH (){
         int normalYear = 1800;
         String expected = "Невисокосный";
         String actual = LeapYear.yearType(normalYear);
@@ -31,7 +31,7 @@ public class LeapYearTest {
     }
 
     @Test
-    public void CheckUniversalYear (){
+    public void checkUniversalYear (){
         int normalYear = 1600;
         String expected = "Високосный";
         String actual = LeapYear.yearType(normalYear);

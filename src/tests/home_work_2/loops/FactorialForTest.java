@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 public class FactorialForTest {
     @Test
-    public void CheckCalculation (){
+    public void checkCalculation (){
         int arg = 5;
         long expected = 120;
         double actual = FactorialFor.factorialForResult(arg);
         Assertions.assertEquals(expected,actual);
     }
     @Test
-    public void CheckResultString (){
+    public void checkResultString (){
         int arg = 5;
         String expected = "1 * 2 * 3 * 4 * 5 = 120";
         String actual = FactorialFor.factorialForCalculation(arg);
@@ -21,7 +21,7 @@ public class FactorialForTest {
     }
 
     @Test
-    public void CheckResultStringNegative (){
+    public void checkResultStringNegative (){
         int arg = -5;
         String expected = "Неверный ввод, укажите положительное число не больше 20";
         String actual = FactorialFor.factorialForCalculation(arg);
@@ -29,7 +29,7 @@ public class FactorialForTest {
     }
 
     @Test
-    public void CheckResultStringOver (){
+    public void checkResultStringOver (){
         int arg = 22;
         String expected = "Неверный ввод, укажите положительное число не больше 20";
         String actual = FactorialFor.factorialForCalculation(arg);
@@ -37,7 +37,7 @@ public class FactorialForTest {
     }
 
     @Test
-    public void CheckResultStringZero (){
+    public void checkResultStringZero (){
         int arg = 0;
         String expected = "0";
         String actual = FactorialFor.factorialForCalculation(arg);

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class MultiplycationTableTest {
     @Test
-    public void CheckMultiplyNum () {
+    public void checkMultiplyNum () {
         String expected = "2 x 1 = 2     |   3 x 1 = 3     |   4 x 1 = 4     |   5 x 1 = 5\n" +
                 "2 x 2 = 4     |   3 x 2 = 6     |   4 x 2 = 8     |   5 x 2 = 10\n" +
                 "2 x 3 = 6     |   3 x 3 = 9     |   4 x 3 = 12    |   5 x 3 = 15\n" +

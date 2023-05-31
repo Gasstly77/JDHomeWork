@@ -6,25 +6,25 @@ import org.junit.jupiter.api.Test;
 
 public class CheckLetterTest {
     @Test
-    public void CheckLetter (){
+    public void checkLetter (){
         String checkSymbol = "a";
         boolean actual = CheckLetter.checkLatter(checkSymbol);
         Assertions.assertTrue(actual);
     }
     @Test
-    public void CheckNumber (){
+    public void checkNumber (){
         String checkSymbol = "7";
         boolean actual = CheckLetter.checkLatter(checkSymbol);
         Assertions.assertFalse(actual);
     }
     @Test
-    public void CheckText (){
+    public void checkText (){
         String checkSymbol = "TExt";
         boolean actual = CheckLetter.checkLatter(checkSymbol);
         Assertions.assertFalse(actual);
     }
     @Test
-    public void CheckSymbol (){
+    public void checkSymbol (){
         String checkSymbol = ":";
         boolean actual = CheckLetter.checkLatter(checkSymbol);
         Assertions.assertFalse(actual);

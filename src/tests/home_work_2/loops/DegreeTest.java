@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class DegreeTest {
     @Test
-    public void CheckCalculation (){
+    public void checkCalculation (){
         int deg = 3;
         double num = 3;
         double expected = 27.0;
@@ -15,7 +15,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckResultString (){
+    public void checkResultString (){
         int deg = 3;
         double num = 3;
         String expected = "3.0 ^ 3 = 27.0";
@@ -24,7 +24,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckCalculationZeroDeg (){
+    public void checkCalculationZeroDeg (){
         int deg = 0;
         double num = 3;
         double expected = 1.0;
@@ -33,7 +33,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckResultStringZeroDeg (){
+    public void checkResultStringZeroDeg (){
         int deg = 0;
         double num = 3;
         String expected = "3.0 ^ 0 = 1.0";
@@ -42,7 +42,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckResultStringOneDeg (){
+    public void checkResultStringOneDeg (){
         int deg = 1;
         double num = 3;
         String expected = "3.0 ^ 1 = 3.0";
@@ -51,7 +51,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckCalculationTask1 (){
+    public void checkCalculationTask1 (){
         int deg = 2;
         double num = 7.5;
         double expected = 56.25;
@@ -60,7 +60,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckCalculationZeroNum (){
+    public void checkCalculationZeroNum (){
         int deg = 2;
         double num = 0;
         double expected = 0.0;
@@ -69,7 +69,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckResultStringTask1 (){
+    public void checkResultStringTask1 (){
         int deg = 2;
         double num = 7.5;
         String expected = "7.5 ^ 2 = 56.25";
@@ -78,7 +78,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckCalculationTask2 (){
+    public void checkCalculationTask2 (){
         int deg = 5;
         double num = 18;
         double expected = 1889568.0;
@@ -87,7 +87,7 @@ public class DegreeTest {
     }
 
     @Test
-    public void CheckResultStringTask2 (){
+    public void checkResultStringTask2 (){
         int deg = 5;
         double num = 18;
         String expected = "18.0 ^ 5 = 1889568.0";
