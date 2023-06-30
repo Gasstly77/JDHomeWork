@@ -14,7 +14,7 @@ public class SearchEngineLowerCase implements ISearchEngine {
     public long search(String text, String word) {
         long wordCount = 0;
         if (this.searchEngine instanceof RegExSearch) {
-            Pattern pattern = Pattern.compile(word, Pattern.CASE_INSENSITIVE);
+            Pattern pattern = Pattern.compile("(?u)\\b" + word + "\\b", Pattern.CASE_INSENSITIVE);
             Matcher matcher = pattern.matcher(text);
 
             while (matcher.find()) {

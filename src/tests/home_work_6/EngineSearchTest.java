@@ -127,9 +127,12 @@ public class EngineSearchTest {
         long expected2 = 1;
         long actual3 = easySearch.search(testText,"привет-привет");
         long expected3 = 0;
+        long actual4 = easySearch.search(testText,"Привет");
+        long expected4 = 0;
         Assertions.assertEquals(expected1,actual1);
         Assertions.assertEquals(expected2,actual2);
         Assertions.assertEquals(expected3,actual3);
+        Assertions.assertEquals(expected4,actual4);
     }
 
     @Test
@@ -229,6 +232,21 @@ public class EngineSearchTest {
         long expected2 = 1;
         long actual3 = easySearch.search(testText,"85");
         long expected3 = 0;
+        Assertions.assertEquals(expected1,actual1);
+        Assertions.assertEquals(expected2,actual2);
+        Assertions.assertEquals(expected3,actual3);
+    }
+
+    @Test
+    public void easySearchEngineWow (){
+        String testText = "ай-яй-яй";
+        ISearchEngine easySearch = new EasySearch();
+        long actual1 = easySearch.search(testText,"ай");
+        long expected1 = 0;
+        long actual2 = easySearch.search(testText,"яй");
+        long expected2 = 0;
+        long actual3 = easySearch.search(testText,"ай-яй-яй");
+        long expected3 = 1;
         Assertions.assertEquals(expected1,actual1);
         Assertions.assertEquals(expected2,actual2);
         Assertions.assertEquals(expected3,actual3);
