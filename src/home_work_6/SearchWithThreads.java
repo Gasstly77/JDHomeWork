@@ -38,7 +38,9 @@ public class SearchWithThreads {
             toSearch = getClientInput(askSearch);
 
             for (File file : files) {
-                futures.add(executor.submit(new SearchingJob(file, toSearch, fileToWrite)));
+                if (file.getName().endsWith(".txt")) {
+                    futures.add(executor.submit(new SearchingJob(file, toSearch, fileToWrite)));
+                }
             }
         } while (!toSearch.equals("end"));
 
