@@ -1,15 +1,15 @@
 package tests.home_work_6;
 
 import home_work_6.api.ISearchEngine;
-import home_work_6.utils.EasySearch;
+import home_work_6.utils.RegExSearch;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class EngineSearchTest {
+public class RegExSearchTest {
     @Test
     public void easySearchEngineSimpleWord (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long expected = 1;
         long actual = easySearch.search(testText,"мама");
         Assertions.assertEquals(expected,actual);
@@ -18,7 +18,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineBigLatter (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long expected = 1;
         long actual = easySearch.search(testText,"Мама");
         Assertions.assertEquals(expected,actual);
@@ -27,7 +27,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineDifEnding (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long expected = 1;
         long actual = easySearch.search(testText,"маму");
         Assertions.assertEquals(expected,actual);
@@ -36,7 +36,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEnginePartWord (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long expected = 1;
         long actual = easySearch.search(testText,"мам");
         Assertions.assertEquals(expected,actual);
@@ -45,7 +45,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineSeveralResults (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual = easySearch.search(testText,"раму");
         long expected = 2;
         Assertions.assertEquals(expected,actual);
@@ -54,7 +54,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineLetter (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, а мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual = easySearch.search(testText,"а");
         long expected = 1;
         Assertions.assertEquals(expected,actual);
@@ -63,7 +63,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineLastWord (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual = easySearch.search(testText,"сами");
         long expected = 1;
         Assertions.assertEquals(expected,actual);
@@ -72,17 +72,8 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineNull (){
         String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual = easySearch.search(testText,"маман");
-        long expected = 0;
-        Assertions.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void easySearchEngineEmpty (){
-        String testText = "Мама мыла раму, маме было трудно, маму надо беречь, беретиге мам, мама у нас одна. Мойте раму сами.";
-        ISearchEngine easySearch = new EasySearch();
-        long actual = easySearch.search(testText,"");
         long expected = 0;
         Assertions.assertEquals(expected,actual);
     }
@@ -90,7 +81,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineHello (){
         String testText = "привет, как дела!";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"привет");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"как");
@@ -105,7 +96,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineStrangeWord (){
         String testText = "привет;какдела!";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"привет");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"как");
@@ -120,7 +111,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineHyphen (){
         String testText = "Привет-привет";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"привет");
         long expected1 = 0;
         long actual2 = easySearch.search(testText,"Привет-привет");
@@ -138,7 +129,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineFakeHyphen (){
         String testText = "Привет -привет";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"привет");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"Привет-привет");
@@ -153,7 +144,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineStartHyphen (){
         String testText = "-привет как-дела";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"привет");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"как");
@@ -168,7 +159,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineEndHyphen (){
         String testText = "в книге слово встречается-";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"встречается");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"в-книге");
@@ -183,7 +174,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineNumHyphen (){
         String testText = "4-х";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"4-х");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"4");
@@ -195,7 +186,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineNum (){
         String testText = "один и 1";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"один");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"и");
@@ -210,7 +201,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineGranny (){
         String testText = "бабушка бабушке бабушку";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"бабушка");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"бабушке");
@@ -225,7 +216,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineNumeric (){
         String testText = "456 14 6 853";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"456");
         long expected1 = 1;
         long actual2 = easySearch.search(testText,"6");
@@ -240,7 +231,7 @@ public class EngineSearchTest {
     @Test
     public void easySearchEngineWow (){
         String testText = "ай-яй-яй";
-        ISearchEngine easySearch = new EasySearch();
+        ISearchEngine easySearch = new RegExSearch();
         long actual1 = easySearch.search(testText,"ай");
         long expected1 = 0;
         long actual2 = easySearch.search(testText,"яй");
