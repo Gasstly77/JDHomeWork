@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 public class RegExSearch implements ISearchEngine {
     @Override
     public long search(String text, String word) {
-        Pattern pattern = Pattern.compile("\\b" + word + "\\b");
+        String regex = "(?<=^|\\s-|\\s|^-|,|;|\\.|!|\\?|:)" + word + "(?=\\s|$|,|;|\\.|!|\\?|:|-$)(?<!-)";
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         int wordCount = 0;
         while(matcher.find()) {
